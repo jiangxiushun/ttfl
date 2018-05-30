@@ -1,0 +1,66 @@
+﻿.header {
+    position: relative;
+    margin: 0 auto;
+    width: 1000px;
+    height: 100px;
+}
+
+.header  .act_imgs{position: absolute;right: 258px;line-height:22px;top:42px;text-align: center;}
+.header  .act_imgs img{
+    width: 102px;height: 22px
+}
+.header .logo{top: 30px;}
+.cons_tainer{width: 1000px;margin: 0 auto}
+.login_cons{height:503px;background-color: #ffd237;overflow: hidden;}
+.login_cons .cons_tainer{position: relative;}
+.login_cons .login_form{position: absolute;width: 313px;height: 394px;top:63px;right:0px;z-index: 9;background: url(../images/lg2.png) no-repeat left bottom;}
+.form_sd{position: absolute;top:57px;right: -6px;}
+.login_cons .login_form .forms{height: 381px;background-color: #fff;padding: 0 30px;}
+.login_form .forms h1{font-family: "΢���ź�";font-weight: normal;font-size: 14px;padding-top: 25px;clear: both;*padding-top: 15px;color: #131313}
+.login_form .forms h1 a{float: right;color: #d32323;font-size: 14px;}
+.login_form .forms h1 a i{display: inline-block;*display: inline;*zoom: 1;width: 20px;height:18px;vertical-align:middle;
+    background: url(../images/lgicon.png) no-repeat;background-position:-95px -5px;}
+.login_form .forms .tips{border:1px solid #ecddcc;background-color: #fff9e7;color: #999;height: 24px;margin-top:6px;line-height: 24px;_line-height:24px;_padding: 4px 0;_height:16px;}
+.login_form .forms .tips span{display: inline-block;*display: inline;*zoom: 1;width: 16px;height: 18px;vertical-align:middle;margin:-1px 7px;_margin-top:0px;background: url(../images/lgicon.png) no-repeat;background-position:-5px -5px;}
+.login_form .forms .fo_inp{height: 36px;border:1px solid #cccccc;margin-top: 9px;position: relative;}
+.login_form .forms .fo_inp label.fieldError{position: absolute;right: 5px;top:9px;font-size: 12px;color: #de2729}
+.login_form .forms .fo_inp3 label.fieldError{position: absolute;right: 98px;top:9px;font-size: 12px;color: #de2729}
+.login_form .forms .fo_inp span{display: inline-block;*display: inline;*zoom: 1;width: 30px;height: 32px;background: url(../images/lgicon.png) no-repeat;background-position:-24px 5px;}
+.login_form .forms .fo_inp span.ps_ico{background-position: -54px 5px;}
+.login_form .forms .fo_inp input{border:none;color: #333;font-size: 14px;width: 214px;height: 34px;line-height: 34px;vertical-align: top;_padding-left:5px;}
+.login_form .forms .login_subs{height: 34px;line-height: 34px;background-color: #ff7101;color: #fff;text-align: center;width: 100%;font-size: 14px;border:none;cursor: pointer;}
+.login_form .forms .login_subs:hover{background-color: #ff7101;}
+.login_form .forms .fo_inp .captcha{width: 152px;height: 30px;border:1px solid #cccccc;padding-left: 5px;}
+.login_form .forms .fo_inp3{border:none;}
+.login_form .forms .fo_inp3 .captchaImage{margin: 2px 0 0 10px;cursor: pointer;width: 82px;height: 29px;}
+.fo_inp2{color: #666;padding: 10px 0;}
+.fo_inp2 input{vertical-align: middle;margin-right: 10px;}
+.fo_inp2 .forget{ float: right;color: #999 }
+.oth_logins{padding-top: 15px;}
+.oth_logins h2{color: #DD2525;font-weight: normal;font-size: 12px;font-weight: bold;padding: 10px 0;position: relative;}
+.oth_logins h2 span.lie{display: block;height: 1px;background-color: #dd2525;overflow: hidden;}
+.oth_logins h2 span.zc{display: block;position: absolute;top:0;left:50%;background-color: #fff;height: 22px;line-height: 22px;width: 120px;margin-left: -60px;text-align: center;}
+.oth_logins .login_icons a{display: block;width: 54px;height: 54px;float:left;background: url(../images/lgicon.png) no-repeat;margin-left: 26px;margin-top: 10px;}
+.oth_logins .login_icons a.lg_qq{background-position:0px -30px;margin-left: 20px;}
+.oth_logins .login_icons a.lg_qq:hover{background-position: -71px -31px;}
+.oth_logins .login_icons a.lg_wx{background-position: 0px -98px;margin-left: 36px;}
+
+.oth_logins .login_icons a.lg_sina{background-position: 0px -166px;}
+.oth_logins .login_icons a.lg_sina:hover{background-position: -71px -166px;}
+.oth_logins .login_icons a.lg_wx:hover{background-position: -71px -98px;}
+.oth_logins .login_icons a.lg_zfb{background-position: -1px -211px;}
+.oth_logins .login_icons a.lg_zfb:hover{background-position: -56px -211px;}
+.oth_logins .login_icons a.error{background-position:-147px -30px;}
+.foot_log{text-align: center;color: #a3a3a3;padding-top: 120px;padding-bottom: 50px;}
+.foot_log p{margin-top: 10px;}
+.foot_log span{color: #d9d9d9;padding: 0 3px 0 8px;}
+.foot_log a{color: #A3A3A3;}
+.reg_bga{background-color: #f5f5f5;}
+
+
+.form_pos{position: relative;}
+.form_pos #areaId-error{position: absolute;left:307px;top:0;}
+.no_address{padding: 20px 0;}
+.no_order{padding: 100px 0;text-align: center;border:1px solid #e7e7e7;border-top:1px solid #ccc ;background-color: #FAFAFA;}
+.no_order span{font-size: 24px;font-family: "΢���ź�";color: #999;font-weight: normal;padding-left: 15px;}
+.div_cap{display: none;}
