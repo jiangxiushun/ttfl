@@ -18,6 +18,15 @@
         {{ method_field('PUT') }}
             <div class="mws-form-inline">
                 <div class="mws-form-row">
+                        <label class="mws-form-label">状态</label>
+                            <div class="mws-form-item">
+                                <select class="small" name="status">
+                                    <option value="1">超级管理员</option>
+                                    <option value="2">普通用户</option>
+                                </select>
+                            </div>
+                </div>
+                <div class="mws-form-row">
                     <label class="mws-form-label">用户名</label>
                         <div class="mws-form-item">
                             <input type="text" class="small" name="username" value="{{ $data -> username}}">

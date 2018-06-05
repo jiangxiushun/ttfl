@@ -9,6 +9,7 @@ use App\Http\Controllers\Controller;
 use App\User;
 use App\Http\Requests\UserInsertRequest;
 use App\Http\Requests\UserUpdateRequest;
+use App\Http\Requests\ReviseRequest;
 use Hash;
 class UsersController extends Controller
 {
@@ -48,7 +49,7 @@ class UsersController extends Controller
 
         $user = new User;
         // 检测是否有文件上传
-       if($request -> hasFile('profile')){
+        if($request -> hasFile('profile')){
             // 创建文件上传对象
             $profile = $request -> file('profile');
             // 处理图片 路径和图片的名称
@@ -60,23 +61,24 @@ class UsersController extends Controller
             // dd($name);
             $profile -> move($dir_name,$temp_name);
             // dd($profile);
-       }
-       $user->username = $request -> input('username','');
-       $user->password = Hash::make($request -> input('password',''));
-       if(!isset($name)){
+        }
+        $user->username = $request -> input('username','');
+        $user->password = Hash::make($request -> input('password',''));
+        if(!isset($name)){
             $user->profile = '/Admin/uploads/1.jpg';
-       }else{ 
+        }else{ 
             $name = trim($name,'.');
             $user->profile = $name;
-       }
-       $user->phone = $request -> input('phone','');
-       $user->email = $request -> input('email','');
-       $res = $user->save();
-       if($res){
+        }
+        $user->phone = $request -> input('phone','');
+        $user->email = $request -> input('email','');
+        $user->status = $request -> input('status',2);
+        $res = $user->save();
+        if($res){
             return redirect('/admin/users')->with('success','添加成功');
-       }else{
+        }else{
             return back()->with('error','添加失败');
-       }
+        }
     }
 
     /**
@@ -155,5 +157,39 @@ class UsersController extends Controller
        }else{
             return back()->with('error','删除失败');
        }
+    }
+
+    /**
+    *   加载修改密码页面
+    */
+    public function upwd($id)
+    {
+        $data = User::find($id);
+        return view('/Admin/users/pass',['data'=>$data]);
+    }
+
+    /**
+    *   执行修改密码
+    */
+    public function revise(ReviseRequest $request,$id)
+    {
+        $user = User::find($id);
+        // dump($user->password);
+        $ypassword = $request->input('ypassword');
+        $bool = Hash::check($ypassword, $user->password);
+        if($bool){
+            $ypassword = Hash::make($ypassword);
+            // dd($ypassword);]
+            $user->password = $ypassword;
+            $res = $user->save();
+            if($res){
+                $value = $request->session()->flush();
+                return redirect('/login')->with('success','修改成功请重新登录');
+            }else{
+                return back()->with('error','修改失败');
+            }
+        }else{
+            return back()->with('error','原名密码错误');
+        }
     }
 }

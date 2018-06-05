@@ -60,11 +60,14 @@
                 <!-- Username and Functions -->
                 <div id="mws-user-functions">
                     <div id="mws-username">
-                    Hello~:　Admin
+                    Hello~:　@if(isset($_SESSION['user'])) {{session('user')->username}}
+                    @endif
+                        admin
                     </div>
                     <ul>
-                        <li><a href="#">修改密码</a></li>
-                    	<li><a href="#">退出登录</a></li>
+                        <li><a href="/admin/user/upwd/@if(isset($_SESSION['user'])){{session('user')->id}}
+                    @endif">修改密码</a></li>
+                    	<li><a href="/admin/login/out">退出登录</a></li>
                     </ul>
                 </div>
             </div>
@@ -98,6 +101,61 @@
                     </li>
                 </ul>
             </div> 
+            <div id="mws-navigation">
+                <ul>
+                    <li>
+                        <a href="#"><i class="icon-list"></i> 分类管理</a>
+                        <ul>
+                            <li><a href="/admin/cates">分类列表</a></li>
+                            <li><a href="/admin/cates/create">添加分类</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div id="mws-navigation">
+                <ul>
+                    <li>
+                        <a href="#"><i class="icon-list"></i> 商品管理</a>
+                        <ul>
+                            <li><a href="/admin/good">商品列表</a></li>
+                            <li><a href="/admin/good/create">添加商品</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div id="mws-navigation">
+                <ul>
+                    <li>
+                        <a href="#"><i class="icon-list"></i> 轮播图管理</a>
+                        <ul>
+                            <li><a href="/admin/lunbos">轮播图列表</a></li>
+                            <li><a href="/admin/lunbos/create">添加轮播图</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div> 
+            <div id="mws-navigation">
+                <ul>
+                    <li>
+                        <a href="#"><i class="icon-list"></i> 友情链接管理</a>
+                        <ul>
+                            <li><a href="/admin/link">链接列表</a></li>
+                            <li><a href="/admin/link/create">添加链接</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div> 
+            <div id="mws-navigation">
+                <ul>
+                    <li>
+                        <a href="#"><i class="icon-list"></i>文章管理</a>
+                        <ul>
+                            <li><a href="/admin/articles">文章列表</a></li>
+                            <li><a href="/admin/articles/create">添加文章</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div> 
         </div>
         
         <!-- Main Container Start -->
@@ -110,11 +168,22 @@
             </div>
         	<!-- 内容开始 -->
             <div class="container">
-            @section('content')
+            
             <!-- 提示失败信息 -->
             @if(session('error'))
+            <div class="mws-form-message error">
                 {{ session('error') }}
+            </div>
+                
             @endif
+
+            @if(session('success'))
+            <div class="mws-form-message success">
+                {{ session('success') }}
+            </div>
+            @endif
+
+            @section('content')
             @show
             </div>
                 <!-- 内容结束 -->

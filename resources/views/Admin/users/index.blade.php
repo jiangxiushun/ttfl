@@ -26,6 +26,7 @@
                         <th>头像</th>
                         <th>手机号</th>
                         <th>邮箱</th>
+                        <th>状态</th>
                         <th>创建时间</th>
                         <th>操作</th>
                     </tr>
@@ -35,15 +36,22 @@
                 <tr>
                     <td>{{$v->id}}</td>
                     <td>{{$v->username}}</td>
-                    <td><img src="{{$v->profile}}" class="img-circle" style="width:100px"></td>
+                    <td><img src="{{$v->profile}}" class="img-circle" style="width:50px"></td>
                     <td>{{$v->phone}}</td>
                     <td>{{$v->email}}</td>
+                    @if($v->status == 1)
+                    <td>超级管理员</td>
+                    @elseif($v->status == 2)
+                    <td>普通用户</td>
+                    @elseif($v->status == 3)
+                    <td>已加入黑名单</td>
+                    @endif
                     <td>{{$v->created_at}}</td>
                     <td>
                         <form action="/admin/users/{{$v->id}}" method="post" style="display:inline">
                         {{ csrf_field() }}
                         {{ method_field('DELETE') }}
-                            <input type="submit" value="删除" class="btn btn-danger" onclick="confirm('确定要删除?')">
+                            <input type="submit" value="删除" class="btn btn-danger">
                         </form>
                         <a href="/admin/users/{{$v -> id}}/edit" class=" btn btn-warning">修改</a>
                     </td>

@@ -24,7 +24,7 @@ class UserUpdateRequest extends Request
     public function rules()
     {
         return [
-            'username' => 'required|unique:user_admin|regex:/^[a-zA-Z0-9_-]{4,16}$/',
+            'username' => 'required|regex:/^[a-zA-Z0-9_-]{4,16}$/',
             'phone' => 'required|regex:/^[1][3,4,5,7,8][0-9]{9}$/',
             'email' => 'required|email',
         ];

@@ -1,0 +1,40 @@
+#tabs {
+            width:400px;
+            height:200px;
+    }
+     #tabs ul {
+            list-style:none;
+            display:block;
+            height:30px;
+            line-height:30px;
+     }
+
+      #tabs ul li {
+            list-style:none;
+            float:left;
+            width:90px;
+            height:30px;
+            margin-left:2px;
+            border:1px solid #ffccff;
+            text-align:center;
+            background-color:#fff;
+            cursor:pointer;
+       }
+       #lists .active {
+            border-top:2px solid red;
+            border-bottom:2px solid #fff;
+     }
+     #tabs div {            
+            width:300px;
+            height:110px;
+            margin-top:-13px;
+            margin-left:34px;
+            padding:15px;
+            border:1px solid #369;
+     } 
+     #tabs .hide{
+        display:none;
+     }
+    div .active{
+        display:block !important;
+    }
