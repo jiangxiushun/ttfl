@@ -26,7 +26,7 @@ class ArticlesRequest extends Request
        return [
             'title' => 'required',
             'author' => 'required',
-            'content' => 'required',
+            'editorValue' => 'required',
         ];
     }
 
@@ -38,7 +38,7 @@ class ArticlesRequest extends Request
         return [
             'title.required' => '标题不能为空',
             'author.required' => '作者不能为空',
-            'content.required' => '内容不能为空',
+            'editorValue.required' => '内容不能为空',
         ];
     }
 }

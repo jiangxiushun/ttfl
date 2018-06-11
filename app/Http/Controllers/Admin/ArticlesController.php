@@ -41,11 +41,9 @@ class ArticlesController extends Controller
     public function store(ArticlesRequest $request)
     {
         $articles = new Articles;
-        $category = $request -> input('category','1');
         $title = $request -> input('title','重大新闻overlord第三季七月份在哔哩哔哩上映');
         $author = $request->input('author','张三');
         $content = $request-> input('editorValue','吾乃侍奉无上至尊之人');
-        $articles -> category = $category;
         $articles -> title = $title;
         $articles -> author = $author;
         $articles -> content = $content;
@@ -91,12 +89,10 @@ class ArticlesController extends Controller
     public function update(Request $request, $id)
     {
         // 接受提交过来的数据
-        $category = $request -> input('category','1');
         $title = $request -> input('title','没有标题');
         $author = $request -> input('author','超级大坏哥');
         $content = $request -> input('editorValue','空内容');
         $article = Articles::find($id);
-        $article -> category = $category;
         $article -> title = $title;
         $article -> author = $author;
         $article -> content = $content;

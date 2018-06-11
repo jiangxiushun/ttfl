@@ -22,7 +22,7 @@
                             <div class="mws-form-item">
                                 <select class="small" name="status">
                                     <option value="1">超级管理员</option>
-                                    <option value="2">普通用户</option>
+                                    <option value="2">普通管理员</option>
                                 </select>
                             </div>
                 </div>

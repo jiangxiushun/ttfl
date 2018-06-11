@@ -3,7 +3,7 @@
 @section('content')
 <div class="mws-panel grid_8">
     <div class="mws-panel-header">
-        <span><i class="icon-table"></i> 友情链接列表</span>
+        <span><i class="icon-table"></i>文章列表</span>
     </div>
         <div class="mws-panel-body no-padding">
             <form action="/admin/link" method="get">
@@ -22,7 +22,6 @@
                 <thead>
                     <tr>
                         <th>ID</th>
-                        <th>类别</th>
                         <th>文章标题</th>
                         <th>文章作者</th>
                         <th>操作</th>
@@ -32,12 +31,6 @@
             @foreach( $data as $k=>$v)
                 <tr>
                     <td><center>{{$v->id}}</center></td>
-                    <td><center>@if($v->category == 1)
-							公告
-							@elseif($v->category == 2)
-							促销
-							@endif
-                    </center></td>
                     <td><center>{{$v->title}}</center></td>
                     <td><center>{{$v->author}}</center></td>
                     <td><center>

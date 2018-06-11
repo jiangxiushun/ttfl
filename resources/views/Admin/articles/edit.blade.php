@@ -11,22 +11,13 @@
 @endif
 <div class="mws-panel grid_8">
     <div class="mws-panel-header">
-        <span>修改分类</span>
+        <span>修改文章</span>
     </div>
     <div class="mws-panel-body no-padding">
         <form class="mws-form" action="/admin/articles/{{$data->id}}" method="post" enctype="multipart/form-data">
         {{ csrf_field() }}
         {{ method_field('PUT') }}
             <div class="mws-form-inline">
-                <div class="mws-form-row">
-                    <label class="mws-form-label">所属分类</label>
-                        <div class="mws-form-item">
-                            <select class="small" name="category">
-                                <option value="1" @if($data->category == 1) selected @endif >----公告----</option>         
-                                <option value="2" @if($data->category == 2) selected @endif >----促销----</option>        
-                            </select>
-                        </div>
-                </div>
                 <div class="mws-form-row">
                     <label class="mws-form-label">文章标题</label>
                         <div class="mws-form-item">

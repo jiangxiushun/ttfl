@@ -167,7 +167,7 @@ html{ _background-image:url(about:blank); _background-attachment:fixed;}
 .rgba-8{ background: rgba(0,0,0,.8);filter:progid:DXImageTransform.Microsoft.Gradient(startColorStr=#c8393939,endColorStr=i#c8393939)}
 .rgba-7{ background: rgba(0,0,0,.7);}
 .bg-tm{background-color: #000;opacity: 0.85;-ms-filter:'progid:DXImageTransform.Microsoft.Alpha(Opacity=85)';filter:alpha(opacity=85);}
-.main{width: 1200px;margin: 0 auto;min-width: 1200px;position: relative;}
+.main{width: 1200px;margin: 0 auto;min-width: 1200px;}
 i.ico{display: inline-block;background: url("../images/ico.png") no-repeat;vertical-align: middle}
 /*reset end*/
 /*顶部*/

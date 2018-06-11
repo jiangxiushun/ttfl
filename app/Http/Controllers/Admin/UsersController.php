@@ -135,6 +135,7 @@ class UsersController extends Controller
        }
        $user->phone = $request -> input('phone','');
        $user->email = $request -> input('email','');
+       $user->status = $request -> input('status','');
        $res = $user->save();
        if($res){
             return redirect('/admin/users')->with('success','修改成功');
@@ -176,10 +177,11 @@ class UsersController extends Controller
         $user = User::find($id);
         // dump($user->password);
         $ypassword = $request->input('ypassword');
+        $password = $request->input('password');
         $bool = Hash::check($ypassword, $user->password);
         if($bool){
-            $ypassword = Hash::make($ypassword);
-            // dd($ypassword);]
+            $ypassword = Hash::make($password);
+            // dd($ypassword);
             $user->password = $ypassword;
             $res = $user->save();
             if($res){

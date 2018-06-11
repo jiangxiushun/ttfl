@@ -219,7 +219,7 @@ input {
     display: inline-block;
     vertical-align: super;}
 .aorder_sum span.tot_pri em{color: #ff7101;font-size: 18px;margin: 0 10px;font-weight: bold;}
-.aorder_sum .sumits{display: block;height: 53px;width: 150px;float:right;*display: inline;background-color: #ff7101;color: #fff;line-height: 53px;text-align: center;font-size: 16px;cursor: pointer;margin: 0 0 0 10px;}
+.aorder_sum .sumits{display: block;height: 53px;width: 140px;float:right;*display: inline;background-color: #ff7101;color: #fff;line-height: 53px;text-align: center;font-size: 16px;cursor: pointer;margin: 0 0 0 10px;}
 .aorder_sum .sumits.none{
     background-color: #dbdbdb;
     cursor: default;

@@ -42,9 +42,7 @@
                     @if($v->status == 1)
                     <td>超级管理员</td>
                     @elseif($v->status == 2)
-                    <td>普通用户</td>
-                    @elseif($v->status == 3)
-                    <td>已加入黑名单</td>
+                    <td>普通管理员</td>
                     @endif
                     <td>{{$v->created_at}}</td>
                     <td>

@@ -70,7 +70,7 @@
                     <label class="mws-form-label">商品描述</label>
                     <div class="mws-form-item" style="width: 500px; padding-right: 84px;">
                         <script id="gdesc" type="text/plain">
-
+                                {{old('gdesc')}}
                         </script>
                     </div>
                 </div>

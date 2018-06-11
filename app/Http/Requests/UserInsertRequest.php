@@ -32,9 +32,9 @@ class UserInsertRequest extends Request
         ];
     }
 
-    // /**
-    // *   自定义错误信息
-    // */
+    /**
+    *   自定义错误信息
+    */
     public function messages()
     {
         return [

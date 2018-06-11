@@ -11,21 +11,12 @@
 @endif
 <div class="mws-panel grid_8">
     <div class="mws-panel-header">
-        <span>添加分类</span>
+        <span>添加文章</span>
     </div>
     <div class="mws-panel-body no-padding">
         <form class="mws-form" action="/admin/articles" method="post" enctype="multipart/form-data">
         {{ csrf_field() }}
             <div class="mws-form-inline">
-                <div class="mws-form-row">
-                    <label class="mws-form-label">所属分类</label>
-                        <div class="mws-form-item">
-                            <select class="small" name="category">
-                                <option value="1">----公告----</option>         
-                                <option value="2">----促销----</option>        
-                            </select>
-                        </div>
-                </div>
                 <div class="mws-form-row">
                     <label class="mws-form-label">文章标题</label>
                         <div class="mws-form-item">

@@ -35,46 +35,25 @@
           </div>
           <div class="part-container clearfix">
               <div class="part-left">
-                <div class="part-left-1 dome"> 
-                
-                <ul class="tabbtn" id="fadetab">
-                    <li class="current"><a href="#">公告</a></li>
-                    <li><a href="#">促销</a></li>
-                </ul><!--tabbtn end-->
-              <div class="tabcon" id="fadecon">
-                <div class="sublist1">
-                    <ul>
-                      @foreach($articles as $k=>$v)
-                        <li ><a href="#" target="_blank">{{$v->title}}</a></li>
-                      @endforeach
-                    </ul>
-                </div><!--tabcon end-->
-                <div class="sublist2">
-                    <ul>
-                        <li><a href="#" target="_blank"></a></li>
-                    </ul>
-                </div>
-            </div>
-            <script type="text/javascript">
-                $(document).ready(function($){
-                    //淡隐淡现选项卡切换
-                    $("#fadetab").tabso({
-                        cntSelect:"#fadecon",
-                        tabEvent:"mouseover",
-                        tabStyle:"fade"
-                    });
-                });
-                            
-            </script>
-                </div>
-                <a class="part-left-2" href="category.php?id=259" target="_blank" title="">
-                <img src="/Home/picture/2016110801.jpg"></a>
-                </div>
+                  <div class="part-left-1"  style="width:235px;border:1px dashed #FBB301"> 
+                      <div>
+                          <center style="font-size:20px;color:#DD5044;">公告</center>
+                          <center style="color:#FFA001;">---------------------------------------------</center>
+                          <ul>
+                            @foreach($articles as $k=>$v)
+                            <li style="padding-left:20px;font-size:14px;"><a href="/home/articles/{{$v->id}}">{{$v->title}}</a></li>
+                            @endforeach
+                          </ul>
+                      </div>
+                  </div>
+                  <a class="part-left-2" href="#" target="_blank" title="">
+                  <img src="/Home/picture/2016110801.jpg"></a>
+              </div>
               <div class="part-center">
                    <ul class="clearfix">
                         @foreach($goods as $k=>$v)
                         <li class="part-list-item">
-                            <a class="part-info" href="goods.php?id=1080" title="鹅卵石充电宝" target="_blank">
+                            <a class="part-info" href="goods.php?id=1080" title="{{$v->gname}}" target="_blank">
                                 <img class="part-img light" src="{{$v->profile1}}">
                                 <h3 class="ell">{{$v->gname}}</h3>
                                 <div class="product-info ell"></div>
@@ -99,12 +78,11 @@
               <div class="part-right">
                   <p class="part-suggest-title">热销推荐</p>
                   <div class="part-suggest">
-                    @foreach($goods as $k=>$v)
-                        @if($v->status == 2)
+                    @foreach($rexiao as $k=>$v)
                         <a href="goods.php?id=1081" class="" target="_blank" title="goods.php?id=1081">
                             <dl>
                                 <dt>
-                                    <img class="" src="{{$v->profile1}}"></dt>
+                                 <img class="" src="{{$v->profile1}}"></dt>
                                 <dd class="title ell">{{$v->gname}}</dd>
                                 <dd class="info ell"></dd>
                                 <dd class="price">
@@ -112,7 +90,6 @@
                                 </dd>
                             </dl>
                         </a>
-                        @endif
                     @endforeach
                      </div>
 
@@ -120,11 +97,28 @@
           </div>
       </div>
   </div>
-<div class="pagelist">
+<div class="pagelist" >
     {!! $goods->render() !!}
 </div>
 <div style="width:100%;height: 43px;background-color:#f5f5f5"></div>
 <style type="text/css">
+.pagelist ul{
+    margin-left: 500px;
+}
+.pagelist ul .active span{
+    display: block;
+    border: 1px solid #ccc;
+    width: 33px;
+    height: 33px;
+    text-align: center;
+    line-height: 35px;
+    margin-left: 5px;
+    background-color: #ccc;
+}
+.pagelist ul li{
+    float:left;
+}
+
 .show_ads{position: fixed;width:100%;height:592px;top:18%;left:0;display:block;z-index: 999;cursor: pointer;}
 .ads_img{position:relative;width:368px;height:394px;margin:0 auto;border:0px solid red;}
 .hb_close{position: absolute; display: block; width: 50px; height: 50px; top: 7px;right: 40px;border: 0px solid red;}

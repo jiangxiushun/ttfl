@@ -13,6 +13,7 @@
 <link rel="stylesheet" type="text/css" href="/Admin/plugins/colorpicker/colorpicker.css" media="screen">
 <link rel="stylesheet" type="text/css" href="/Admin/plugins/fullcalendar/fullcalendar.css" media="screen">
 <link rel="stylesheet" type="text/css" href="/Admin/plugins/fullcalendar/fullcalendar.print.css" media="print">
+<link href="/Home/images/small_top.png" rel="icon" type="image/x-icon" />
 
 <!-- Required Stylesheets -->
 <link rel="stylesheet" type="text/css" href="/Admin/bootstrap/css/bootstrap.min.css" media="screen">
@@ -60,15 +61,18 @@
                 <!-- Username and Functions -->
                 <div id="mws-user-functions">
                     <div id="mws-username">
-                    Hello~:　@if(isset($_SESSION['user'])) {{session('user')->username}}
-                    @endif
-                        admin
+                    欢迎~: 
+                        @if(Session::has('user'))
+                            {{session('user')->username}}
+                        <ul>
+                            <li><a href="/admin/user/upwd/@if(Session::has('user')){{session('user')->id}}
+                            @endif">修改密码</a></li>
+                            <li><a href="/admin/login/out">退出登录</a></li>
+                        </ul>
+                        @elseif(!Session::has('user'))
+                        <a href="/login" style="color:#fff">未登录哦~请登录</a>
+                        @endif
                     </div>
-                    <ul>
-                        <li><a href="/admin/user/upwd/@if(isset($_SESSION['user'])){{session('user')->id}}
-                    @endif">修改密码</a></li>
-                    	<li><a href="/admin/login/out">退出登录</a></li>
-                    </ul>
                 </div>
             </div>
         </div>
@@ -89,6 +93,8 @@
                 <span></span>
                 <span></span>
             </div>
+            @if(Session::has('user'))
+            @if(session('user')->status == 1)
             <!-- Main Navigation -->
             <div id="mws-navigation">
                 <ul>
@@ -100,7 +106,21 @@
                         </ul>
                     </li>
                 </ul>
+            </div>
+            @endif
+            @if(session('user')->status == 1)
+            <div id="mws-navigation">
+                <ul>
+                    <li>
+                        <a href="#"><i class="icon-list"></i> 前台用户管理</a>
+                        <ul>
+                            <li><a href="/home/users">用户列表</a></li>
+                        </ul>
+                    </li>
+                </ul>
             </div> 
+            @endif
+            @endif
             <div id="mws-navigation">
                 <ul>
                     <li>

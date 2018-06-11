@@ -105,7 +105,8 @@ class GoodsController extends Controller
      */
     public function show($id)
     {
-        // 
+        $data = Goods::find($id);
+        return view('/Admin/goods/show',['data'=>$data]);
     }
 
     /**
@@ -198,6 +199,34 @@ class GoodsController extends Controller
             return redirect('/admin/good')->with('success','删除成功');
         }else{
             return back()->with('error','删除失败');
+        }
+    }
+    /**
+    *   上架
+    */
+    public function shang($id)
+    {
+        $good = Goods::find($id);
+        $good -> status = 1;
+        $res = $good -> save();
+        if($res){
+            return redirect('/admin/good')->with('success','上架成功');
+        }else{
+            return back()->with('error','上架失败');
+        }
+    }
+    /**
+    *   下架
+    */
+    public function xia($id)
+    {
+        $good = Goods::find($id);
+        $good -> status = 4;
+        $res = $good -> save();
+        if($res){
+            return redirect('/admin/good')->with('success','下架成功');
+        }else{
+            return back()->with('error','下架失败');
         }
     }
 }
